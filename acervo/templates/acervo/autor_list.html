@@ -1,0 +1,11 @@
+<h1>Lista de Autores</h1>
+<ul>
+  {% for autor in autores %}
+    <li>
+      <a href="{% url 'autor_detail' autor.pk %}">{{ autor.nome }}</a>
+    </li>
+  {% empty %}
+    <li>Nenhum autor cadastrado.</li>
+  {% endfor %}
+</ul>
+<a href="{% url 'livro_list' %}">Ver Livros</a>
